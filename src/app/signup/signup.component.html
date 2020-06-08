@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="form-group" *ngIf="!signedUp; else showActivities">
+
+    <h2>Please Fill the Form and Select Activity Type Based On Your Preference</h2>
+    <form [formGroup]="participantForm" (ngSubmit)="onSignUp()">
+
+      <div class="field">
+        <label for="firstName">First Name</label><span>*</span> <br>
+        <input type="text" id="firstName" formControlName="firstName" [ngClass]="{'has-error': participantForm.get('firstName').errors && 
+            (participantForm.get('firstName').touched || participantForm.get('firstName').dirty)}"><br>
+            <span *ngIf="participantForm.get('firstName').errors && 
+                  (participantForm.get('firstName').touched || participantForm.get('firstName').dirty)">
+              <span *ngIf="participantForm.get('firstName').errors">First Name is Required</span>
+            </span>
+
+          
+      </div>
+
+      <div class="field">
+        <label for="lastName">Last Name</label><span>*</span><br>
+        <input type="text" id="lastName" formControlName="lastName"  [ngClass]="{'has-error': participantForm.get('lastName').errors && 
+            (participantForm.get('lastName').touched || participantForm.get('lastName').dirty)}"><br>
+            <span *ngIf="participantForm.get('lastName').errors && 
+                  (participantForm.get('lastName').touched || participantForm.get('lastName').dirty)">
+              <span *ngIf="participantForm.get('lastName').errors">Last Name is Required</span>
+            </span>
+      </div>
+
+      <div class="field">
+        <label for="firstName">Email</label><span>*</span><br>
+        <input type="text" id="email" formControlName="email" [ngClass]="{'has-error': participantForm.get('email').errors && 
+            (participantForm.get('email').touched || participantForm.get('email').dirty)}"><br>
+            <span *ngIf="participantForm.get('email').errors && 
+                  (participantForm.get('email').touched || participantForm.get('email').dirty)">
+              <span *ngIf="participantForm.get('email').errors">Email is Required or It has an Incorrect Format</span>
+            </span>
+      </div>
+
+      <div class="field">
+        <select id="activity" formControlName="activity"><br>    
+          <option *ngFor="let ac of activities">{{ ac.name }} </option>
+
+        </select>
+      </div>
+
+      <div>
+        <button type="submit" [disabled]="participantForm.invalid"> Sign Up!</button>
+      </div>
+
+    </form>
+  </div>
+
+  <ng-template #showActivities> 
+    <div *ngIf="!interested">
+      <h2> Thak You For Your Feedback! </h2>
+      <h3>If You want To See Who Is Also Interested In {{ chosenActivity }}, Click Button Below</h3>
+      <div>
+          <button type="button" (click)="onShowParticipants()"> See Your Friends !</button>
+      </div>
+    </div>
+
+    <div *ngIf="interested && !lonely">
+    <h2> These Are Your Collegues Who Are Also Interested In {{ chosenActivity }}</h2>
+    
+      <table>
+        <thead>
+            <th>
+                First Name 
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Email
+            </th>
+        </thead>
+          <tbody>
+            <tr *ngFor="let p of participants">
+              <th class="people">
+                {{p.firstName}}
+              </th>
+              <th class="people">
+                {{p.lastName}}
+              </th>
+              <th class="people">
+                {{p.email}}
+              </th>
+            </tr>
+          </tbody>
+      </table> 
+    </div>
+    <div *ngIf="lonely">
+        <h2> Seems So Far You Are the Only One Who Interested in {{ chosenActivity }}</h2>
+    </div>
+  
+  </ng-template>
+
+
+</div>
