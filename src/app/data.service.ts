@@ -9,13 +9,11 @@ export class DataService {
 
   url = "https://localhost:44320/api/";
 
-
   getActivitiesList(){
     return this.http.get(this.url + 'activities')
   }
 
-  registerParticipant(participant: Participant){   
-
+  registerParticipant(participant: Participant){
     const body = {
       firstName: participant.firstName,
       lastName: participant.lastName,
