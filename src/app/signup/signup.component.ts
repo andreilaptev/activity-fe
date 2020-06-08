@@ -3,7 +3,6 @@ import { FormGroup, FormControl, FormBuilder, Validator, Validators } from "@ang
 import { DataService } from"../data.service";
 import { Participant } from '../participant';
 
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
