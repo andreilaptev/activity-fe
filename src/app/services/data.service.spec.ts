@@ -21,7 +21,7 @@ fdescribe('DataService', () => {
 
   afterEach(() => httpMock.verify());
 
-  it('should be created', inject([DataService], (dataService: DataService) => {
+  it('DataService should be created', inject([DataService], (dataService: DataService) => {
     expect(dataService).toBeTruthy();
   }));
 });

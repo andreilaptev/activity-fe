@@ -1,7 +1,7 @@
 <div class="container">
   <div class="form-group" *ngIf="!signedUp; else showActivities">
 
-    <h2>Please Fill the Form and Select Activity Type Based On Your Preference</h2>
+    <h1>Please Fill the Form and Select Activity Type Based On Your Preference</h1>
     <form [formGroup]="participantForm" (ngSubmit)="onSignUp()">
 
       <div class="field">
