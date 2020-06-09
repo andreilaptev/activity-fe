@@ -45,7 +45,7 @@ export class SignupComponent implements OnInit {
     part.email = this.participantForm.value.email;
     part.activity = this.chosenActivity;
 
-    //this.dataService.registerParticipant(part).subscribe()
+    this.dataService.registerParticipant(part).subscribe()
   }
 
   onShowParticipants(){
