@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
     this.participantForm.value.activity == null ? this.chosenActivity = this.activities[0].name : this.chosenActivity = this.participantForm.value.activity;
     this.signedUp = true;
 
-    let part = new Participant();
+    let part: Participant;
 
     part.firstName = this.participantForm.value.firstName;
     part.lastName = this.participantForm.value.lastName;
