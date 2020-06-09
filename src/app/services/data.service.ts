@@ -7,24 +7,24 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  readonly url = "https://localhost:44320/api/";
+  readonly url = 'https://localhost:44320/api/';
 
-  getActivitiesList(){
-    return this.http.get(`${this.url}activities`)
+  getActivitiesList() {
+    return this.http.get(`${this.url}activities`);
   }
 
-  registerParticipant(participant: Participant){
+  registerParticipant(participant: Participant) {
     const body = {
       firstName: participant.firstName,
       lastName: participant.lastName,
       email: participant.email,
       activity: participant.activity
-    }
-    return this.http.post(`${this.url}users`, body)
+    };
+    return this.http.post(`${this.url}users`, body);
   }
 
-  getParticipantsByActivity(activity: string){
-    return this.http.get(`${this.url}users/participants?activity=${activity}`)
+  getParticipantsByActivity(activity: string) {
+    return this.http.get(`${this.url}users/participants?activity=${activity}`);
   }
 
 }
