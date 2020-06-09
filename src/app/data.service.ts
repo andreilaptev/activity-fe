@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Participant } from './interfaces/participant';
+import { Participant } from './classes/participant';
 
 @Injectable()
 export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  url = "https://localhost:44320/api/";
+  readonly url = "https://localhost:44320/api/";
 
   getActivitiesList(){
-    return this.http.get(this.url + 'activities')
+    return this.http.get(`${this.url}activities`)
   }
 
   registerParticipant(participant: Participant){
@@ -20,11 +20,11 @@ export class DataService {
       email: participant.email,
       activity: participant.activity
     }
-    return this.http.post(this.url + 'users', body)
+    return this.http.post(`${this.url}users`, body)
   }
 
   getParticipantsByActivity(activity: string){
-    return this.http.get(this.url + 'users/participants?activity=' + activity)
+    return this.http.get(`${this.url}users/participants?activity=${activity}`)
   }
 
 }

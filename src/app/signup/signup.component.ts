@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validator, Validators } from "@angular/forms";
 import { DataService } from"../data.service";
-import { Participant } from '../participant';
+import { Participant } from '../classes/participant';
 
 @Component({
   selector: 'app-signup',
@@ -37,14 +37,14 @@ export class SignupComponent implements OnInit {
     this.participantForm.value.activity == null ? this.chosenActivity = this.activities[0].name : this.chosenActivity = this.participantForm.value.activity;
     this.signedUp = true;
 
-    let part: Participant;
+    let part = new Participant();
 
     part.firstName = this.participantForm.value.firstName;
     part.lastName = this.participantForm.value.lastName;
     part.email = this.participantForm.value.email;
     part.activity = this.chosenActivity;
 
-    this.dataService.registerParticipant(part).subscribe()
+    //this.dataService.registerParticipant(part).subscribe()
   }
 
   onShowParticipants(){

@@ -1,4 +1,4 @@
-export interface Participant {
+export class Participant {
     firstName: string;
     lastName: string;
     email: string;
