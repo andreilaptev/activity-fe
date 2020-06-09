@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validator, Validators } from "@angular/forms";
 import { DataService } from"../data.service";
 import { Participant } from '../classes/participant';
+import { Activity } from '../classes/activity';
 
 @Component({
   selector: 'app-signup',
