@@ -12,25 +12,25 @@ body{
 }
 
 input{
-    border: 2px solid green;
+    border: 2px solid darkgray;
     border-radius: 5px;
     margin-top: 10px;
     width: 40%;
     height: 40px;
-    background: bisque;
+    background: lightgray;
 }
 
 select{
-    width: 20%;
+    width: 40%;
     height: 40px;
-    background: bisque;
+    background: lightgray;
     text-align: center;
-    border: 2px solid green;
+    border: 2px solid darkgray;
     border-radius: 5px;
 }
 
 label, th{
-    color: darkgreen;   
+    color: black;   
     font-size: 20px; 
 }
 
@@ -40,13 +40,13 @@ option{
 
 h2{
     margin-top: 30px;;
-    color: darkgreen;
+    color: black;
 }
 
 button{
     height: 40px;
     width: 20%;
-    border: 2px solid darkgreen;
+    border: 2px solid black;
     border-radius: 5px;
     background:  lightgreen;
     cursor: pointer;
