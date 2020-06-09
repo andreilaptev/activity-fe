@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Participant } from './classes/participant';
+import { Participant } from '../classes/participant';
 
 @Injectable()
 export class DataService {

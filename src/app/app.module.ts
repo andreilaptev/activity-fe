@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
-import { DataService } from './data.service';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
